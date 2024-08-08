@@ -13,7 +13,11 @@ import (
 )
 
 // Get the tree-sitter Language for this grammar.
+func Language() unsafe.Pointer {
+	return unsafe.Pointer(C.tree_sitter_zig())
+}
+
+// yang: add this to make it work with what forge expects.
 func GetLanguage() *sitter.Language {
-	ptr := unsafe.Pointer(C.tree_sitter_zig())
-	return sitter.NewLanguage(ptr)
+	return sitter.NewLanguage(Language())
 }
