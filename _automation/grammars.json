@@ -344,8 +344,10 @@
   {
     "language": "zig",
     "url": "https://github.com/maxxnino/tree-sitter-zig/",
-    "files":["parser.c"],
-    "reference": "master",
+    "files": [
+      "parser.c"
+    ],
+    "reference": "main",
     "revision": "2bac4cc6c697d46a193905fef6d003bfa0bfabfd",
     "updateBasedOn": "commit"
   }

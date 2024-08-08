@@ -2,7 +2,7 @@ package zig
 
 // #cgo CFLAGS: -std=c11 -fPIC
 // #include "parser.h"
-//const TSLanguage *tree_sitter_zig();
+// const TSLanguage *tree_sitter_zig();
 // // NOTE: if your language has an external scanner, add it here.
 import "C"
 

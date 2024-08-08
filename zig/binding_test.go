@@ -7,7 +7,7 @@ import (
 	"github.com/smacker/go-tree-sitter/zig"
 )
 
-func TestCanLoadZigGrammar(t *testing.T) {
+func TestCanLoadGrammar(t *testing.T) {
 	language := tree_sitter.NewLanguage(zig.Language())
 	if language == nil {
 		t.Errorf("Error loading Zig grammar")
