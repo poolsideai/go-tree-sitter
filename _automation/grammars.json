@@ -221,8 +221,8 @@
       "scanner.c",
       "scanner.h"
     ],
-    "reference": "v0.22.2",
-    "revision": "78a78df5e06b4c13173af2a1f607c9a853d0f240",
+    "reference": "v0.22.8",
+    "revision": "c07d69739ba71b5a449bdbb7735991f8aabf8546",
     "updateBasedOn": "tag"
   },
   {
