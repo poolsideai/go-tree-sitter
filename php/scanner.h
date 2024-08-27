@@ -128,12 +128,16 @@ static inline void advance(TSLexer *lexer) { lexer->advance(lexer, false); }
 
 static inline void skip(TSLexer *lexer) { lexer->advance(lexer, true); }
 
-static unsigned serialize(Scanner *scanner, char *buffer) {
+#include <stdio.h>
+
+unsigned serialize(Scanner *scanner, char *buffer) {
     unsigned size = 0;
 
+    fprintf(stderr, "buffer: %p, scanner: %p\n", buffer, scanner);
     buffer[size++] = (char)scanner->open_heredocs.len;
     for (unsigned j = 0; j < scanner->open_heredocs.len; j++) {
         Heredoc *heredoc = &scanner->open_heredocs.data[j];
+        fprintf(stderr, "heredoc pointer %p\n", heredoc);
         unsigned word_bytes = heredoc->word.len * sizeof(heredoc->word.data[0]);
         if (size + 2 + word_bytes >= TREE_SITTER_SERIALIZATION_BUFFER_SIZE) {
             return 0;
@@ -147,7 +151,7 @@ static unsigned serialize(Scanner *scanner, char *buffer) {
     return size;
 }
 
-static void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
+void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
     unsigned size = 0;
     scanner->has_leading_whitespace = false;
     VEC_CLEAR(scanner->open_heredocs);
