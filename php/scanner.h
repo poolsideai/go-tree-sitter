@@ -144,7 +144,8 @@ unsigned serialize(Scanner *scanner, char *buffer) {
         if (size + 2 + word_bytes >= TREE_SITTER_SERIALIZATION_BUFFER_SIZE) {
             return 0;
         }
-        fprintf(stderr, "end_word_indentation_allowed: %d\n", heredoc->end_word_indentation_allowed);
+        fprintf(stderr, "sizeof heredoc: %d, sizeof String %d, sizeof bool %d\n", sizeof(Heredoc), sizeof(String), sizeof(bool));
+        fprintf(stderr, "end_word_indentation_allowed: %d\n", (char)heredoc->end_word_indentation_allowed);
         buffer[size++] = (char)heredoc->end_word_indentation_allowed;
         fprintf(stderr, "word length: %d\n", heredoc->word.len);
         buffer[size++] = (char)heredoc->word.len;
