@@ -170,7 +170,7 @@ void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
 
     uint8_t open_heredoc_count = buffer[size++];
     for (unsigned j = 0; j < open_heredoc_count; j++) {
-        Heredoc heredoc;
+        Heredoc heredoc = {0};
         heredoc.end_word_indentation_allowed = buffer[size++];
         heredoc.word = string_new();
         uint8_t word_length = buffer[size++];
@@ -547,7 +547,7 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
 
     if (valid_symbols[HEREDOC_START]) {
         lexer->result_symbol = HEREDOC_START;
-        Heredoc heredoc;
+        Heredoc heredoc = {0};
         fprintf(stderr, "uninitialized heredoc here\n");
 
         while (iswspace(lexer->lookahead)) {
