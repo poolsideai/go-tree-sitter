@@ -130,7 +130,7 @@ static inline void skip(TSLexer *lexer) { lexer->advance(lexer, true); }
 
 #include <stdio.h>
 
-unsigned serialize(Scanner *scanner, char *buffer) {
+static unsigned serialize(Scanner *scanner, char *buffer) {
     unsigned size = 0;
 
     fprintf(stderr, "buffer: %p, scanner: %p\n", buffer, scanner);
@@ -151,7 +151,7 @@ unsigned serialize(Scanner *scanner, char *buffer) {
     return size;
 }
 
-void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
+static void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
     unsigned size = 0;
     scanner->has_leading_whitespace = false;
     VEC_CLEAR(scanner->open_heredocs);
