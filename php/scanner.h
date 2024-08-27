@@ -145,7 +145,8 @@ unsigned serialize(Scanner *scanner, char *buffer) {
             return 0;
         }
         fprintf(stderr, "sizeof heredoc: %d, sizeof String %d, sizeof bool %d\n", sizeof(Heredoc), sizeof(String), sizeof(bool));
-        fprintf(stderr, "end_word_indentation_allowed: %d\n", (char)heredoc->end_word_indentation_allowed);
+        fprintf(stderr, "endwordindent %p\n", &heredoc->end_word_indentation_allowed);
+        fprintf(stderr, "end_word_indentation_allowed: %d\n", (char)(heredoc->end_word_indentation_allowed));
         buffer[size++] = (char)heredoc->end_word_indentation_allowed;
         fprintf(stderr, "word length: %d\n", heredoc->word.len);
         buffer[size++] = (char)heredoc->word.len;
@@ -547,6 +548,7 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
     if (valid_symbols[HEREDOC_START]) {
         lexer->result_symbol = HEREDOC_START;
         Heredoc heredoc;
+        fprintf(stderr, "uninitialized heredoc here\n");
 
         while (iswspace(lexer->lookahead)) {
             skip(lexer);
