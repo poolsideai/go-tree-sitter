@@ -14,10 +14,10 @@
     "url": "https://github.com/tree-sitter/tree-sitter-bash",
     "files": [
       "parser.c",
-      "scanner.cc"
+      "scanner.c"
     ],
-    "reference": "v0.19.0",
-    "revision": "b6667bed364733c8a8f8e5973749f86cfa04ba2a",
+    "reference": "v0.21.0",
+    "revision": "f3f26f47a126797c011c311cec9d449d855c3eab",
     "updateBasedOn": "tag"
   },
   {
@@ -26,8 +26,8 @@
     "files": [
       "parser.c"
     ],
-    "reference": "v0.20.2",
-    "revision": "7175a6dd5fc1cee660dce6fe23f6043d75af424a",
+    "reference": "v0.21.4",
+    "revision": "deca017a554045b4c203e7ddff39ae64ff05e071",
     "updateBasedOn": "tag"
   },
   {
@@ -37,8 +37,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.20.0",
-    "revision": "7a47daeaf0d410dd1a91c97b274bb7276dd96605",
+    "reference": "v0.21.3",
+    "revision": "31a64b28292aac6adf44071e449fa03fb80eaf4e",
     "updateBasedOn": "tag"
   },
   {
@@ -46,10 +46,10 @@
     "url": "https://github.com/tree-sitter/tree-sitter-cpp",
     "files": [
       "parser.c",
-      "scanner.cc"
+      "scanner.c"
     ],
-    "reference": "v0.20.0",
-    "revision": "f44509141e7e483323d2ec178f2d2e6c0fc041c1",
+    "reference": "v0.22.3",
+    "revision": "0b4aa47f07d958a49260aadc87e8474b03897c23",
     "updateBasedOn": "tag"
   },
   {
@@ -59,8 +59,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.19.0",
-    "revision": "9668e889161358d18a558f68f1614b6edde34029",
+    "reference": "v0.21.1",
+    "revision": "9af0bdd9d225edee12f489cfa8284e248321959b",
     "updateBasedOn": "tag"
   },
   {
@@ -71,17 +71,19 @@
       "scanner.c"
     ],
     "reference": "main",
-    "revision": "61843e3beebf19417e4fede4e8be4df1084317ad",
+    "revision": "8a5f273bfa281c66354da562f2307c2d394b6c81",
     "updateBasedOn": "commit"
   },
   {
     "language": "dockerfile",
     "url": "https://github.com/camdencheek/tree-sitter-dockerfile",
     "files": [
-      "parser.c"
+      "parser.h",
+      "parser.c",
+      "scanner.c"
     ],
-    "reference": "v0.1.2",
-    "revision": "d34a0cebd094e830bdd2106a28cb2f1fb22401d8",
+    "reference": "v0.2.0",
+    "revision": "868e44ce378deb68aac902a9db68ff82d2299dd0",
     "updateBasedOn": "tag"
   },
   {
@@ -89,10 +91,10 @@
     "url": "https://github.com/elixir-lang/tree-sitter-elixir",
     "files": [
       "parser.c",
-      "scanner.cc"
+      "scanner.c"
     ],
-    "reference": "v0.1.0",
-    "revision": "869dff3ceb8823ca4b17ca33b663667c8e41e8ba",
+    "reference": "v0.2.0",
+    "revision": "de690fa8a028f122af46d9d2685679fe5f2d7d60",
     "updateBasedOn": "tag"
   },
   {
@@ -100,10 +102,10 @@
     "url": "https://github.com/elm-tooling/tree-sitter-elm",
     "files": [
       "parser.c",
-      "scanner.cc"
+      "scanner.c"
     ],
-    "reference": "v5.6.3",
-    "revision": "cce0e5938e7779f86cf8bf445eadf7df4b88229d",
+    "reference": "v5.7.0",
+    "revision": "c26afd7f2316f689410a1622f1780eff054994b1",
     "updateBasedOn": "tag"
   },
   {
@@ -113,18 +115,17 @@
       "parser.c"
     ],
     "reference": "master",
-    "revision": "64457ea6b73ef5422ed1687178d4545c3e91334a",
+    "revision": "6204b7308a32e991a8daed2e9895a90be55a510a",
     "updateBasedOn": "commit"
   },
   {
     "language": "groovy",
     "url": "https://github.com/murtaza64/tree-sitter-groovy",
     "files": [
-      "parser.c",
-      "scanner.c"
+      "parser.c"
     ],
     "reference": "main",
-    "revision": "235009aad0f580211fc12014bb0846c3910130c1",
+    "revision": "171b3b7412bc93284fc0dad0a7a7bbbbd1b51289",
     "updateBasedOn": ""
   },
   {
@@ -135,7 +136,7 @@
       "scanner.c"
     ],
     "reference": "main",
-    "revision": "b5539065432c08e4118eb3ee7c94902fdda85708",
+    "revision": "9e3ec9848f28d26845ba300fd73c740459b83e9b",
     "updateBasedOn": "commit"
   },
   {
@@ -143,11 +144,11 @@
     "url": "https://github.com/tree-sitter/tree-sitter-html",
     "files": [
       "parser.c",
-      "scanner.cc",
+      "scanner.c",
       "tag.h"
     ],
-    "reference": "v0.19.0",
-    "revision": "d93af487cc75120c89257195e6be46c999c6ba18",
+    "reference": "v0.20.4",
+    "revision": "3713d4004c2259f7658eaad367dbad1a3989429d",
     "updateBasedOn": "tag"
   },
   {
@@ -156,8 +157,8 @@
     "files": [
       "parser.c"
     ],
-    "reference": "v0.20.1",
-    "revision": "2b57cd9541f9fd3a89207d054ce8fbe72657c444",
+    "reference": "v0.21.0",
+    "revision": "953abfc8bb3eb2f578e1f461edba4a9885f974b8",
     "updateBasedOn": "tag"
   },
   {
@@ -167,8 +168,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.20.4",
-    "revision": "de1e682289a417354df5b4437a3e4f92e0722a0f",
+    "reference": "v0.21.4",
+    "revision": "d767b1a276a4e80d7a6be30bada3070740ba4fa2",
     "updateBasedOn": "tag"
   },
   {
@@ -178,8 +179,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "0.3.5",
-    "revision": "51e451be6c18e2cc123249f49edf8e26fc50311c",
+    "reference": "0.3.8",
+    "revision": "e1a2d5ad1f61f5740677183cd4125bb071cd2f30",
     "updateBasedOn": "tag"
   },
   {
@@ -190,7 +191,7 @@
       "scanner.c"
     ],
     "reference": "master",
-    "revision": "0e860f697901c9b610104eb61d3812755d5211fc",
+    "revision": "acb3f3666383bd8cba9c9d9dde00ec4b16b055d6",
     "updateBasedOn": "commit"
   },
   {
@@ -206,11 +207,13 @@
     "url": "https://github.com/tree-sitter/tree-sitter-ocaml",
     "files": [
       "parser.c",
-      "scanner.cc",
-      "scanner.h"
+      "scanner.c",
+      "scanner.h",
+      "alloc.h",
+      "parser.h"
     ],
-    "reference": "v0.20.1",
-    "revision": "de07323343946c32759933cb3b7c78e821098cad",
+    "reference": "v0.22.0",
+    "revision": "f7e63111ed1bc1908eacafe6af1ee8d01bfcf7ae",
     "updateBasedOn": "tag"
   },
   {
@@ -221,8 +224,8 @@
       "scanner.c",
       "scanner.h"
     ],
-    "reference": "v0.22.2",
-    "revision": "78a78df5e06b4c13173af2a1f607c9a853d0f240",
+    "reference": "v0.22.8",
+    "revision": "c07d69739ba71b5a449bdbb7735991f8aabf8546",
     "updateBasedOn": "tag"
   },
   {
@@ -240,10 +243,10 @@
     "url": "https://github.com/tree-sitter/tree-sitter-python",
     "files": [
       "parser.c",
-      "scanner.cc"
+      "scanner.c"
     ],
-    "reference": "v0.20.0",
-    "revision": "2b9e9e0d231d5dd9f491d47f704817baee7d5af0",
+    "reference": "v0.23.0",
+    "revision": "346fa42dc2990d2a2736cc60891369d0d3d8e65c",
     "updateBasedOn": "tag"
   },
   {
@@ -253,8 +256,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.20.1",
-    "revision": "7a010836b74351855148818d5cb8170dc4df8e6a",
+    "reference": "v0.21.0",
+    "revision": "a8eed3d73379528caa9310b20b69fd3c22dcecc7",
     "updateBasedOn": "tag"
   },
   {
@@ -264,8 +267,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.20.3",
-    "revision": "0431a2c60828731f27491ee9fdefe25e250ce9c9",
+    "reference": "v0.21.2",
+    "revision": "04352146022062c101b8ddd853adf17eadd8cf56",
     "updateBasedOn": "tag"
   },
   {
@@ -273,11 +276,10 @@
     "url": "https://github.com/tree-sitter/tree-sitter-scala",
     "files": [
       "parser.c",
-      "scanner.c",
-      "stack.h"
+      "scanner.c"
     ],
-    "reference": "v0.22.0",
-    "revision": "5bce09bdd9d3dda5af5f4c67ca5e9bcbc7c44be2",
+    "reference": "v0.22.5",
+    "revision": "d9017869dda79cefe2dc9d23c6125eda0a2d5d22",
     "updateBasedOn": "tag"
   },
   {
@@ -292,8 +294,8 @@
       "uthash.h",
       "vc_vector.h"
     ],
-    "reference": "v0.10.1",
-    "revision": "84c90ee15f851e1541c25c86e8a4338f5b4d5af2",
+    "reference": "v0.11.0",
+    "revision": "be7f2e7db1fc19f0852265ec60923fc058380739",
     "updateBasedOn": "tag"
   },
   {
@@ -303,8 +305,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "0.4.3-with-generated-files",
-    "revision": "caa99d7d3c14aac03b5f16fc86fedf8755570760",
+    "reference": "0.5.0-with-generated-files",
+    "revision": "57c1c6d6ffa1c44b330182d41717e6fe37430704",
     "updateBasedOn": "tag"
   },
   {
@@ -325,8 +327,8 @@
       "parser.c",
       "scanner.c"
     ],
-    "reference": "v0.20.3",
-    "revision": "c604297f8197b468026f2ea32119935887e01c67",
+    "reference": "v0.21.2",
+    "revision": "9f804be960f289a0acc59d8564acc16857b0b088",
     "updateBasedOn": "tag"
   },
   {
@@ -349,6 +351,29 @@
     ],
     "reference": "main",
     "revision": "2bac4cc6c697d46a193905fef6d003bfa0bfabfd",
+    "updateBasedOn": "commit"
+  },
+  {
+    "language": "markdown",
+    "url": "https://github.com/tree-sitter-grammars/tree-sitter-markdown",
+    "files": [
+      "parser.c",
+      "scanner.c"
+    ],
+    "reference": "v0.2.3",
+    "revision": "62516e8c78380e3b51d5b55727995d2c511436d8",
+    "updateBasedOn": "tag"
+  },
+  {
+    "language": "sql",
+    "url": "https://github.com/DerekStride/tree-sitter-sql",
+    "files": [
+      "parser.c",
+      "parser.h",
+      "scanner.c"
+    ],
+    "reference": "gh-pages",
+    "revision": "c67ecbd37d8d12f22e4cc7138afd14bc20253e10",
     "updateBasedOn": "commit"
   }
 ]
