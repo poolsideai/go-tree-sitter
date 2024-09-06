@@ -21,7 +21,8 @@ lang_dirs = [
     'python',
     'ruby',
     'rust',
-    #'typescript', Oh you are so special. You make me feel dumb
+    # typescript has a slightly different directory structure. Right now it works without fixing up headers. 
+    #'typescript', 
     'kotlin',
     'scala',
     'zig'
@@ -46,7 +47,7 @@ def ls_exts(directory, extensions):
 
 
 # fix_headers assumes some pre-processing is already done. Then it changes:
-# #include "../foo/bar.h"
+# #include "../bar.h"
 # #include "./bar.h"
 # #include "foo/bar.h"
 # all into #include "bar.h"
@@ -121,7 +122,7 @@ def op_recur(src, dst_dir, operation):
                 headers.append(lines.split('"')[1])
     for h in headers:
         op_recur(h, dst_dir, operation)
-    operation(src, os.path.join(dst_dir, os.path.basename(src)))
+    operation(src, os.path.join(dst_dir)) 
 
 
 def copy_with_extra_commends(src, dst):
