@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
-#include "./point.h"
+#include "point.h" // modified by Poolside fork
 #include "api.h"
 
 typedef struct {

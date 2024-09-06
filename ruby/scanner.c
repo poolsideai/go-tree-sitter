@@ -1,5 +1,5 @@
-#include "../alloc.h"
-#include "../array.h"
+#include "alloc.h" // modified by Poolside fork
+#include "array.h" // modified by Poolside fork
 #include "parser.h"
 
 #include <string.h>

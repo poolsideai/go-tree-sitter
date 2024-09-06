@@ -8,12 +8,12 @@ extern "C" {
 #include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "./length.h"
-#include "./array.h"
-#include "./error_costs.h"
-#include "./host.h"
+#include "length.h" // modified by Poolside fork
+#include "array.h" // modified by Poolside fork
+#include "error_costs.h" // modified by Poolside fork
+#include "host.h" // modified by Poolside fork
 #include "api.h"
-#include "./parser.h"
+#include "parser.h" // modified by Poolside fork
 
 #define TS_TREE_STATE_NONE USHRT_MAX
 #define NULL_SUBTREE ((Subtree) {.ptr = NULL})

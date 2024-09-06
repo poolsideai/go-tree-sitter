@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-#include "./subtree.h"
-#include "./parser.h"
+#include "subtree.h" // modified by Poolside fork
+#include "parser.h" // modified by Poolside fork
 
 #define ts_builtin_sym_error_repeat (ts_builtin_sym_error - 1)
 

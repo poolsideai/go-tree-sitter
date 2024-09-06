@@ -1,4 +1,4 @@
-#include "../array.h"
+#include "array.h" // modified by Poolside fork
 #include "parser.h"
 
 #include <string.h>

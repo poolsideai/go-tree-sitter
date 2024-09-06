@@ -5,10 +5,10 @@
 extern "C" {
 #endif
 
-#include "./length.h"
-#include "./subtree.h"
+#include "length.h" // modified by Poolside fork
+#include "subtree.h" // modified by Poolside fork
 #include "api.h"
-#include "./parser.h"
+#include "parser.h" // modified by Poolside fork
 
 typedef struct {
   TSLexer data;

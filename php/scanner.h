@@ -1,5 +1,5 @@
-#include "tree_sitter/array.h"
-#include "tree_sitter/parser.h"
+#include "array.h" // modified by Poolside fork
+#include "parser.h" // modified by Poolside fork
 
 #include <string.h>
 #include <wchar.h>

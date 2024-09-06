@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "./array.h"
+#include "array.h" // modified by Poolside fork
 #include "api.h"
 
 typedef struct {

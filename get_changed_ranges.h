@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-#include "./tree_cursor.h"
-#include "./subtree.h"
+#include "tree_cursor.h" // modified by Poolside fork
+#include "subtree.h" // modified by Poolside fork
 
 typedef Array(TSRange) TSRangeArray;
 
