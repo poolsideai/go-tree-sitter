@@ -1,7 +1,7 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Poolside modification in the fork, generated at 2024-09-06 11:07:56.748594 //
+// Poolside modification in the fork, generated at 2024-09-06 11:07:56.547306 //
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -16,18 +16,14 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(TREE_SITTER_HIDDEN_SYMBOLS) || defined(_WIN32)
-#define TS_PUBLIC
-#else
-#define TS_PUBLIC __attribute__((visibility("default")))
-#endif
-
-TS_PUBLIC extern void *(*ts_current_malloc)(size_t);
-TS_PUBLIC extern void *(*ts_current_calloc)(size_t, size_t);
-TS_PUBLIC extern void *(*ts_current_realloc)(void *, size_t);
-TS_PUBLIC extern void (*ts_current_free)(void *);
-
 // Allow clients to override allocation functions
+#ifdef TREE_SITTER_REUSE_ALLOCATOR
+
+extern void *(*ts_current_malloc)(size_t);
+extern void *(*ts_current_calloc)(size_t, size_t);
+extern void *(*ts_current_realloc)(void *, size_t);
+extern void (*ts_current_free)(void *);
+
 #ifndef ts_malloc
 #define ts_malloc  ts_current_malloc
 #endif
@@ -41,6 +37,23 @@ TS_PUBLIC extern void (*ts_current_free)(void *);
 #define ts_free    ts_current_free
 #endif
 
+#else
+
+#ifndef ts_malloc
+#define ts_malloc  malloc
+#endif
+#ifndef ts_calloc
+#define ts_calloc  calloc
+#endif
+#ifndef ts_realloc
+#define ts_realloc realloc
+#endif
+#ifndef ts_free
+#define ts_free    free
+#endif
+
+#endif
+
 #ifdef __cplusplus
 }
 #endif
@@ -49,7 +62,7 @@ TS_PUBLIC extern void (*ts_current_free)(void *);
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Poolside modification in the fork, generated at 2024-09-06 11:07:56.748594 //
+// Poolside modification in the fork, generated at 2024-09-06 11:07:56.547306 //
 ////////////////////////////////////////////////////////////////////////////////
 
 

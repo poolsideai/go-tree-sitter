@@ -28,6 +28,11 @@ lang_dirs = [
     'zig'
 ]
 
+
+file_map = { 
+  'alloc.h': 'ocaml/alloc.h'
+}
+
 # flatten a directory
 def flatten_dir(root):
     print(f'Flattening {root}')
@@ -126,8 +131,10 @@ def op_recur(src, dst_dir, operation):
 
 
 def copy_with_extra_commends(src, dst):
+    if os.path.basename(src) in file_map.keys():
+        src = file_map[os.path.basename(src)]
     shutil.copy2(src, dst)
-    add_extra_line(dst, make_comments())
+    add_extra_line(os.path.join(dst, os.path.basename(src)), make_comments())
 
 def copy_recur(src, dst_dir):
     op_recur(src, dst_dir, copy_with_extra_commends)
