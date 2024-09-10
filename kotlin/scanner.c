@@ -512,8 +512,13 @@ void tree_sitter_kotlin_external_scanner_destroy(void *payload) {
   ts_free(stack);
 }
 
+// Modified by Poolside fork to fix an UB
 unsigned tree_sitter_kotlin_external_scanner_serialize(void *payload, char *buffer) {
   Stack *stack = (Stack *)payload;
+  // Poolside: in memcpy if src is nullptr it is a UB even if size is 0
+  if (stack->size == 0) {
+    return 0;
+  }
   memcpy(buffer, stack->contents, stack->size);
   return stack->size;
 }
