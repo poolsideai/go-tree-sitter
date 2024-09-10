@@ -1,7 +1,7 @@
 #ifndef TREE_SITTER_TREE_CURSOR_H_
 #define TREE_SITTER_TREE_CURSOR_H_
 
-#include "./subtree.h"
+#include "subtree.h" // modified by Poolside fork
 
 typedef struct {
   const Subtree *subtree;
@@ -14,6 +14,7 @@ typedef struct {
 typedef struct {
   const TSTree *tree;
   Array(TreeCursorEntry) stack;
+  TSSymbol root_alias_symbol;
 } TreeCursor;
 
 typedef enum {

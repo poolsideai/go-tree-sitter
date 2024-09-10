@@ -1,7 +1,7 @@
 #ifndef TREE_SITTER_TREE_H_
 #define TREE_SITTER_TREE_H_
 
-#include "./subtree.h"
+#include "subtree.h" // modified by Poolside fork
 
 #ifdef __cplusplus
 extern "C" {

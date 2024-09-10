@@ -6,10 +6,11 @@ extern "C" {
 #endif
 
 #include "api.h"
-#include "./parser.h"
+#include "parser.h" // modified by Poolside fork
 
 bool ts_wasm_store_start(TSWasmStore *, TSLexer *, const TSLanguage *);
-void ts_wasm_store_stop(TSWasmStore *);
+void ts_wasm_store_reset(TSWasmStore *);
+bool ts_wasm_store_has_error(const TSWasmStore *);
 
 bool ts_wasm_store_call_lex_main(TSWasmStore *, TSStateId);
 bool ts_wasm_store_call_lex_keyword(TSWasmStore *, TSStateId);
