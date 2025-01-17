@@ -222,8 +222,9 @@ func (p *Parser) Debug() {
 
 // Close should be called to ensure that all the memory used by the parse is freed.
 //
-// As the constructor in go-tree-sitter would set this func call through runtime.SetFinalizer,
-// parser.Close() will be called by Go's garbage collector and users would not have to call this manually.
+// As a backstop, the constructor sets this to run as the type's finalizer, via runtime.SetFinalizer.
+// However, this doesn't guarantee the finalizer will run, especially if your Go heap usage is not forcing GC regularly,
+// and the process may use unexpected amounts of memory
 func (p *Parser) Close() {
 	if !p.isClosed {
 		C.ts_parser_delete(p.c)
@@ -304,8 +305,9 @@ func (t *Tree) cachedNode(ptr C.TSNode) *Node {
 
 // Close should be called to ensure that all the memory used by the tree is freed.
 //
-// As the constructor in go-tree-sitter would set this func call through runtime.SetFinalizer,
-// parser.Close() will be called by Go's garbage collector and users would not have to call this manually.
+// As a backstop, the constructor sets this to run as the type's finalizer, via runtime.SetFinalizer.
+// However, this doesn't guarantee the finalizer will run, especially if your Go heap usage is not forcing GC regularly,
+// and the process may use unexpected amounts of memory
 func (t *BaseTree) Close() {
 	if !t.isClosed {
 		C.ts_tree_delete(t.c)
@@ -621,8 +623,9 @@ func NewTreeCursor(n *Node) *TreeCursor {
 // Close should be called to ensure that all the memory used by the tree cursor
 // is freed.
 //
-// As the constructor in go-tree-sitter would set this func call through runtime.SetFinalizer,
-// parser.Close() will be called by Go's garbage collector and users would not have to call this manually.
+// As a backstop, the constructor sets this to run as the type's finalizer, via runtime.SetFinalizer.
+// However, this doesn't guarantee the finalizer will run, especially if your Go heap usage is not forcing GC regularly,
+// and the process may use unexpected amounts of memory
 func (c *TreeCursor) Close() {
 	if !c.isClosed {
 		C.ts_tree_cursor_delete(c.c)
@@ -867,8 +870,9 @@ func NewQuery(pattern []byte, lang *Language) (*Query, error) {
 
 // Close should be called to ensure that all the memory used by the query is freed.
 //
-// As the constructor in go-tree-sitter would set this func call through runtime.SetFinalizer,
-// parser.Close() will be called by Go's garbage collector and users would not have to call this manually.
+// As a backstop, the constructor sets this to run as the type's finalizer, via runtime.SetFinalizer.
+// However, this doesn't guarantee the finalizer will run, especially if your Go heap usage is not forcing GC regularly,
+// and the process may use unexpected amounts of memory
 func (q *Query) Close() {
 	if !q.isClosed {
 		C.ts_query_delete(q.c)
@@ -990,8 +994,10 @@ func (qc *QueryCursor) SetPointRange(startPoint Point, endPoint Point) {
 
 // Close should be called to ensure that all the memory used by the query cursor is freed.
 //
-// As the constructor in go-tree-sitter would set this func call through runtime.SetFinalizer,
-// parser.Close() will be called by Go's garbage collector and users would not have to call this manually.
+// As a backstop, the constructor sets this to run as the type's finalizer, via runtime.SetFinalizer.
+// However, this doesn't guarantee the finalizer will run, especially if your Go heap usage is not forcing GC regularly,
+// and the process may use unexpected amounts of memory
+// before your process runs out of memory.
 func (qc *QueryCursor) Close() {
 	if !qc.isClosed {
 		C.ts_query_cursor_delete(qc.c)
