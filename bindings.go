@@ -228,6 +228,7 @@ func (p *Parser) Debug() {
 func (p *Parser) Close() {
 	if !p.isClosed {
 		C.ts_parser_delete(p.c)
+		runtime.SetFinalizer(p, nil)
 	}
 
 	p.isClosed = true
@@ -311,6 +312,7 @@ func (t *Tree) cachedNode(ptr C.TSNode) *Node {
 func (t *BaseTree) Close() {
 	if !t.isClosed {
 		C.ts_tree_delete(t.c)
+		runtime.SetFinalizer(t, nil)
 	}
 
 	t.isClosed = true
@@ -629,6 +631,7 @@ func NewTreeCursor(n *Node) *TreeCursor {
 func (c *TreeCursor) Close() {
 	if !c.isClosed {
 		C.ts_tree_cursor_delete(c.c)
+		runtime.SetFinalizer(c, nil)
 	}
 
 	c.isClosed = true
@@ -876,6 +879,7 @@ func NewQuery(pattern []byte, lang *Language) (*Query, error) {
 func (q *Query) Close() {
 	if !q.isClosed {
 		C.ts_query_delete(q.c)
+		runtime.SetFinalizer(q, nil)
 	}
 
 	q.isClosed = true
@@ -1001,6 +1005,7 @@ func (qc *QueryCursor) SetPointRange(startPoint Point, endPoint Point) {
 func (qc *QueryCursor) Close() {
 	if !qc.isClosed {
 		C.ts_query_cursor_delete(qc.c)
+		runtime.SetFinalizer(qc, nil)
 	}
 
 	qc.isClosed = true

@@ -679,3 +679,27 @@ func BenchmarkParseInput(b *testing.B) {
 		_, _ = parser.ParseInputCtx(ctx, nil, input)
 	}
 }
+
+func TestManualFinalize(t *testing.T) {
+	js := "1 + 2"
+
+	parser := NewParser()
+	parser.SetLanguage(getTestGrammar())
+	tree, err := parser.ParseCtx(context.Background(), nil, []byte(js))
+	assert.NoError(t, err)
+	root := tree.RootNode()
+
+	q, err := NewQuery([]byte("(sum) (number)"), getTestGrammar())
+	assert.Nil(t, err)
+
+	qc := NewQueryCursor()
+	qc.Exec(q, root)
+
+	parser.Close()
+	tree.Close()
+	qc.Close()
+	q.Close()
+
+	// run GC to nothing panics when finalizers (should) have run
+	runtime.GC()
+}
